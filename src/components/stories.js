@@ -1,1 +1,2 @@
-import './Timekeeper.story'
+import "./Timekeeper.story";
+import "./ImageSearch.story";

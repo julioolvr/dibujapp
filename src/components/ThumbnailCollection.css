@@ -1,0 +1,11 @@
+.ThumbnailCollection {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 20em;
+}
+
+.ThumbnailCollection__thumbnail {
+  width: auto;
+  height: 10em;
+  margin: 0 0.5em;
+}
