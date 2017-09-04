@@ -34,7 +34,7 @@ class ImageSearch extends React.Component {
           Search
         </button>
 
-        <ThumbnailCollection images={this.state.results} />
+        <ThumbnailCollection results={this.state.results} />
       </div>
     );
   }

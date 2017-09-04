@@ -2,13 +2,14 @@ import React from "react";
 
 import "./ThumbnailCollection.css";
 
-function ThumbnailCollection({ images }) {
+function ThumbnailCollection({ results }) {
+  // TODO: Use image sizes to avoid reflow when images get downloaded
   return (
     <div className="ThumbnailCollection">
-      {images.map(image => (
+      {results.map(result => (
         <img
-          key={image.url}
-          src={image.url}
+          key={result.link}
+          src={result.link}
           className="ThumbnailCollection__thumbnail"
         />
       ))}
