@@ -1,7 +1,6 @@
 .ThumbnailCollection {
   display: flex;
   flex-wrap: wrap;
-  max-height: 20em;
 }
 
 .ThumbnailCollection__thumbnail {
