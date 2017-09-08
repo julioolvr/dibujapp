@@ -1,0 +1,6 @@
+{
+  "env": {
+    "NODE_ENV": "production",
+    "REACT_APP_API_BASE_URL": "@dibujapp-api-base-url"
+  }
+}
