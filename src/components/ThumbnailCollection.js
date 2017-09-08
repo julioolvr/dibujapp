@@ -8,6 +8,7 @@ function ThumbnailCollection({ results }) {
     <div className="ThumbnailCollection">
       {results.map(result => (
         <img
+          alt=""
           key={result.link}
           src={result.link}
           className="ThumbnailCollection__thumbnail"
