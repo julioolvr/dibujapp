@@ -45,7 +45,7 @@ class SearchPanelsContainer extends React.Component {
       <div>
         <div className="SearchPanelsContainer__panels">
           {this.state.panels.map((panel, i) => (
-            <div className="SearchPanelsContainer__panel">
+            <div className="SearchPanelsContainer__panel" key={i}>
               <button onClick={() => this.closePanel(i)}>X</button>
               <ImageSearch
                 query={panel.query}
