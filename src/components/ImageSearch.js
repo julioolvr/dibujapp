@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import ThumbnailCollection from "./ThumbnailCollection";
 
@@ -16,5 +17,17 @@ function ImageSearch({ query, results, onQueryChange, onSearch }) {
     </form>
   );
 }
+
+ImageSearch.propTypes = {
+  query: PropTypes.string,
+  results: PropTypes.array,
+  onQueryChange: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired
+};
+
+ImageSearch.defaultProps = {
+  query: "",
+  results: []
+};
 
 export default ImageSearch;
