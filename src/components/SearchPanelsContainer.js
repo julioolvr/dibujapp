@@ -1,7 +1,7 @@
 import React from "react";
 import g from "glamorous";
 
-import ImageSearch from "./ImageSearch";
+import SearchPanel from "./SearchPanel";
 import imageSearchApi from "../api/imageSearch";
 
 const AddPanelButton = g.button({
@@ -75,15 +75,13 @@ class SearchPanelsContainer extends React.Component {
         <PanelsCollection>
           {this.state.panels.map((panel, i) => (
             <PanelContainer key={i}>
-              <Panel>
-                <button onClick={() => this.closePanel(i)}>X</button>
-                <ImageSearch
-                  query={panel.query}
-                  results={panel.results}
-                  onSearch={query => this.onPanelSearch(i, query)}
-                  onQueryChange={newQuery => this.onQueryChange(i, newQuery)}
-                />
-              </Panel>
+              <SearchPanel
+                query={panel.query}
+                results={panel.results}
+                onSearch={query => this.onPanelSearch(i, query)}
+                onQueryChange={newQuery => this.onQueryChange(i, newQuery)}
+                onClose={() => this.closePanel(i)}
+              />
             </PanelContainer>
           ))}
           <PanelContainer>
