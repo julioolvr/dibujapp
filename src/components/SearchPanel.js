@@ -12,7 +12,10 @@ function SearchPanel({ query, results, onSearch, onQueryChange, onClose }) {
       padding="1em"
       overflowY="scroll"
     >
-      <button onClick={onClose}>X</button>
+      <g.Button float="right" onClick={onClose}>
+        X
+      </g.Button>
+
       <ImageSearch
         query={query}
         results={results}
