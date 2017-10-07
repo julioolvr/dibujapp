@@ -1,9 +1,38 @@
 import React from "react";
+import g from "glamorous";
 
 import ImageSearch from "./ImageSearch";
 import imageSearchApi from "../api/imageSearch";
 
-import "./SearchPanelsContainer.css";
+const AddPanelButton = g.button({
+  backgroundColor: "#eb6e80",
+  border: "1px solid #eee",
+  color: "#eee",
+  fontSize: "0.6em",
+  padding: "1em 2em",
+  outline: "none",
+  cursor: "pointer"
+});
+
+const PanelsCollection = g.div({
+  display: "flex",
+  flexWrap: "wrap",
+  padding: "1em"
+});
+
+// TODO: Change the width of the panels with media queries
+const PanelContainer = g.div({
+  width: "33.33333%",
+  padding: ".5em",
+  boxSizing: "border-box"
+});
+
+const Panel = g.div({
+  height: "20em",
+  border: "1px solid #ccc",
+  padding: "1em",
+  overflowY: "scroll"
+});
 
 class SearchPanelsContainer extends React.Component {
   state = {
@@ -43,20 +72,29 @@ class SearchPanelsContainer extends React.Component {
   render() {
     return (
       <div>
-        <div className="SearchPanelsContainer__panels">
+        <PanelsCollection>
           {this.state.panels.map((panel, i) => (
-            <div className="SearchPanelsContainer__panel" key={i}>
-              <button onClick={() => this.closePanel(i)}>X</button>
-              <ImageSearch
-                query={panel.query}
-                results={panel.results}
-                onSearch={query => this.onPanelSearch(i, query)}
-                onQueryChange={newQuery => this.onQueryChange(i, newQuery)}
-              />
-            </div>
+            <PanelContainer key={i}>
+              <Panel>
+                <button onClick={() => this.closePanel(i)}>X</button>
+                <ImageSearch
+                  query={panel.query}
+                  results={panel.results}
+                  onSearch={query => this.onPanelSearch(i, query)}
+                  onQueryChange={newQuery => this.onQueryChange(i, newQuery)}
+                />
+              </Panel>
+            </PanelContainer>
           ))}
-        </div>
-        <button onClick={() => this.addPanel()}>+</button>
+          <PanelContainer>
+            <AddPanelButton onClick={() => this.addPanel()}>
+              <span role="img" aria-label="Add panel">
+                ➕
+              </span>{" "}
+              Add a panel
+            </AddPanelButton>
+          </PanelContainer>
+        </PanelsCollection>
       </div>
     );
   }
