@@ -27,13 +27,6 @@ const PanelContainer = g.div({
   boxSizing: "border-box"
 });
 
-const Panel = g.div({
-  height: "20em",
-  border: "1px solid #ccc",
-  padding: "1em",
-  overflowY: "scroll"
-});
-
 class SearchPanelsContainer extends React.Component {
   state = {
     panels: []
