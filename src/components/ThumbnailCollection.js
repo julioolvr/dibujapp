@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./ThumbnailCollection.css";
 
@@ -17,5 +18,13 @@ function ThumbnailCollection({ results }) {
     </div>
   );
 }
+
+ThumbnailCollection.propTypes = {
+  results: PropTypes.array
+};
+
+ThumbnailCollection.defaultProps = {
+  results: []
+};
 
 export default ThumbnailCollection;

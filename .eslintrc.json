@@ -2,7 +2,10 @@
   "plugins": ["react"],
   "extends": ["standard", "plugin:react/recommended", "prettier"],
   "parser": "babel-eslint",
-  "env": { "browser": true },
+  "env": {
+    "browser": true,
+    "jest": true
+  },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
